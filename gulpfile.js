@@ -6,6 +6,7 @@ const concat = require("gulp-concat");
 const autoprefixer = require("gulp-autoprefixer");
 const htmlmin = require("gulp-htmlmin");
 const imagemin = require("gulp-imagemin");
+const browsersync = require("browser-sync").create();
 
 const paths = {
     html:{
@@ -29,7 +30,8 @@ function clean(){
 function html(){
     return gulp.src(paths.html.src)
         .pipe(htmlmin({collapseWhitespace: true}))
-        .pipe(gulp.dest(paths.html.dest));
+        .pipe(gulp.dest(paths.html.dest))
+        .pipe(browsersync.stream());
 }
 
 function css(){
@@ -38,7 +40,8 @@ function css(){
         .pipe(autoprefixer({cascade: false}))
         .pipe(concat("styles.min.css"))
         .pipe(cleanCSS({level: 2}))
-        .pipe(gulp.dest(paths.css.dest));
+        .pipe(gulp.dest(paths.css.dest))
+        .pipe(browsersync.stream());
 }
 
 function img(){
@@ -48,6 +51,13 @@ function img(){
 }
 
 function watch(){
+    browsersync.init({
+        server:{
+            baseDir:"./dist/"
+        }
+    })
+    gulp.watch(paths.html.dest).on("change", browsersync.reload);
+    gulp.watch(paths.html.src, html);
     gulp.watch(paths.css.src, css);
 }
 
@@ -55,5 +65,5 @@ exports.html = html;
 exports.css = css;
 exports.img = img;
 exports.clean = clean;
-gulp.watch = watch;
+exports.watch = watch;
 exports.default = gulp.parallel(clean, html, css);
