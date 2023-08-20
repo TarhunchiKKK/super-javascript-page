@@ -66,4 +66,4 @@ exports.css = css;
 exports.img = img;
 exports.clean = clean;
 exports.watch = watch;
-exports.default = gulp.parallel(clean, html, css);
+exports.default = gulp.series(clean, html, css);
