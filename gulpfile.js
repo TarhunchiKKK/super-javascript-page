@@ -23,7 +23,7 @@ const paths = {
 }
 
 function clean(){
-    return del(["./dist/*", "!dist/img", "!dist/bootstrap"]);
+    return del(["./dist/*", "!dist/img", "!dist/bootstrap", "!dist/fontello"]);
 }
 
 function html(){
@@ -47,8 +47,13 @@ function img(){
         .pipe(gulp.dest(paths.img.dest));
 }
 
+function watch(){
+    gulp.watch(paths.css.src, css);
+}
+
 exports.html = html;
 exports.css = css;
 exports.img = img;
 exports.clean = clean;
+gulp.watch = watch;
 exports.default = gulp.parallel(clean, html, css);

@@ -1,0 +1,31 @@
+$background-color1: #111;
+$background-color2: #070707;
+
+.bg1{
+  background-color: $background-color1;
+}
+
+.bg2{
+  background-color: $background-color2;
+}
+
+header{
+  background: url(../img/pattern.png) $background-color1;
+  padding: 145px 0;
+}
+
+#about-course, #course-program, #review{
+  background-color: $background-color1;
+}
+
+#about-author, #for-hom, #faq, footer{
+  background-color: $background-color2;
+}
+
+section{
+  padding: 100px 0;
+}
+
+footer{
+  padding: 50px;
+}

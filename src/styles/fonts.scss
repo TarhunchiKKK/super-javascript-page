@@ -1,0 +1,55 @@
+$color-yellow: rgb(238, 187, 18);
+$color-white: rgb(255, 255, 255);
+
+
+.text-italic{
+  font-style: italic;
+}
+
+.text-yellow{
+  color: $color-yellow;
+}
+
+.text-white{
+  color: $color-white;
+}
+
+.text-underline{
+  text-decoration: underline;
+}
+
+.my-button{
+  display: block;
+  max-width: 200px;
+  margin: 0 auto;
+  padding: 8px 30px;
+  font-weight: 500;
+  background-color: $color-yellow;
+  color: (--bs-black);
+}
+
+.my-button:hover{
+  color: (--bs-white);
+  opacity: 0.8;
+}
+
+.text-in-circle {
+  width: 70px;
+  height: 70px;
+
+  margin: 0 auto 15px;
+
+  border: 3px solid $color-yellow;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.line{
+  width: 100px;
+  height: 3px;
+  background-color: $color-yellow;
+  margin: 15px auto;
+}
