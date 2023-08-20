@@ -45,6 +45,11 @@ $color-white: rgb(255, 255, 255);
   display: flex;
   justify-content: center;
   align-items: center;
+  color: $color-yellow;
+}
+
+.text-in-circle i{
+  font-size: 25px;
 }
 
 .line{
