@@ -1,5 +1,8 @@
 $background-color1: #111;
 $background-color2: #070707;
+$background-yellow: rgb(238, 187, 18);
+$background-light-1: #05b1b1;
+$background-light-2:  #52339a;
 
 .bg1{
   background-color: $background-color1;
@@ -7,6 +10,18 @@ $background-color2: #070707;
 
 .bg2{
   background-color: $background-color2;
+}
+
+.bg-light-1{
+  background-color: $background-light-1;
+}
+
+.bg-light-1{
+  background-color: $background-light-2;
+}
+
+.bg-yellow{
+  background-color: $background-yellow;
 }
 
 header{
