@@ -61,6 +61,7 @@ function watch(){
     gulp.watch(paths.css.src, css);
 }
 
+
 exports.html = html;
 exports.css = css;
 exports.img = img;
